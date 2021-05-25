@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_103152) do
+ActiveRecord::Schema.define(version: 2021_05_25_112838) do
+
+  create_table "cafemenus", force: :cascade do |t|
+    t.string "name"
+    t.string "file"
+    t.integer "faktury_id"
+    t.integer "kontrahenci_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "fakturies", force: :cascade do |t|
     t.string "rodzaj_dokumentu"
     t.text "opis"
     t.string "numer_dokumentu"
     t.string "data_wystawienia"
-    t.string "okres"
+    t.string "okres_od"
+    t.string "okres_do"
     t.integer "kontrahenci_id"
+    t.integer "cafemenu_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_103152) do
     t.string "ulica"
     t.string "kod_pocztowy"
     t.string "miasto"
-    t.integer "nip"
+    t.integer "NIP"
     t.boolean "aktywna"
     t.integer "faktury_id"
     t.datetime "created_at", precision: 6, null: false

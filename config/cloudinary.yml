@@ -1,0 +1,9 @@
+# Example (actual values ​​need to be confirmed from Cloudinary)
+ 
+production:
+
+  cloud_name: "hdwe0bbh2"
+
+  api_key: "891192724879459"
+
+  api_secret: "Z4gNcEp6zbGAyL1PuAYVjXYaSYg"

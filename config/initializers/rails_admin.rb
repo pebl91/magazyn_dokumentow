@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
 
+  
   ### Popular gems integration
 
   ## == Devise ==
@@ -38,4 +39,52 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+   
+   config.model 'Cafemenu' do
+    edit do
+      field :name, :string
+      field :file, :carrierwave
+    end
+  end
+  
+    config.model 'Kontrahenci' do
+      object_label_method :kontrahenci_model_name
+      list do
+        field :nazwa do 
+        searchable true
+      end
+      field :NIP do 
+        searchable true
+      end
+    end
+  end
+    
+    config.model 'Faktury' do
+      object_label_method :faktury_model_name
+      list do
+        field :rodzaj_dokumentu do 
+        searchable true
+      end
+        field :numer_dokumentu do 
+          searchable true
+        end
+        field :data_wystawienia do 
+          searchable true
+        end
+         field :okres_od do 
+          searchable true
+        end
+         field :okres_do do 
+          searchable true
+        end
+        field :kontrahenci do 
+          searchable true
+          searchable :nazwa
+        end
+        field :cafemenu do 
+          searchable true
+        end
+    end
+  end
 end
+ 
