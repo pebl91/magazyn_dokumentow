@@ -1,0 +1,2 @@
+class Kontrahenci < ApplicationRecord
+end
