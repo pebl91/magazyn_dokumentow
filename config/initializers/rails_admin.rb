@@ -41,6 +41,13 @@ RailsAdmin.config do |config|
   end
    
    config.model 'Cafemenu' do
+    label 'Załącznik'
+    field :name do
+    label 'Nazwa'
+  end
+  field :file do
+    label 'Plik'
+  end
     edit do
       field :name, :string
       field :file, :carrierwave
@@ -70,6 +77,7 @@ RailsAdmin.config do |config|
       end
       
       field :cafemenu do
+        label 'Plik'
       end
       
            field :data_wystawienia do

@@ -5,7 +5,7 @@ mount_uploader :file, CafemenuUploader
   has_one :faktury
   has_one :kontrahenci
   
-  def cafemenu_model_name
-		self.nazwa
+  def custom_label_method
+  "Cefemenu #{Załącznik}"
   end
 end
