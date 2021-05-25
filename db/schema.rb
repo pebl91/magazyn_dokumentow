@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_084328) do
+ActiveRecord::Schema.define(version: 2021_05_25_103152) do
+
+  create_table "fakturies", force: :cascade do |t|
+    t.string "rodzaj_dokumentu"
+    t.text "opis"
+    t.string "numer_dokumentu"
+    t.string "data_wystawienia"
+    t.string "okres"
+    t.integer "kontrahenci_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "kontrahencis", force: :cascade do |t|
     t.string "nazwa"
@@ -19,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_084328) do
     t.string "miasto"
     t.integer "nip"
     t.boolean "aktywna"
+    t.integer "faktury_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
