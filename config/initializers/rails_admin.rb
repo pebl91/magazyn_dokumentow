@@ -58,8 +58,42 @@ RailsAdmin.config do |config|
       end
     end
   end
-    
+  
     config.model 'Faktury' do
+      field :rodzaj_dokumentu do
+      end
+      
+       field :numer_dokumentu do
+      end
+      
+      field :kontrahenci do
+      end
+      
+      field :cafemenu do
+      end
+      
+           field :data_wystawienia do
+        strftime_format do
+          '%d-%m-%Y'
+      end
+    end
+      field :okres_od do
+        strftime_format do
+          '%d-%m-%Y'
+      end
+    end 
+      
+      field :okres_do do
+        strftime_format do
+          '%d-%m-%Y'
+        end
+      end
+    end
+ 
+
+  
+    config.model 'Faktury' do
+   
       object_label_method :faktury_model_name
       list do
         field :rodzaj_dokumentu do 

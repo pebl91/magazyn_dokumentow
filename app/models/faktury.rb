@@ -7,4 +7,9 @@ class Faktury < ApplicationRecord
 	def faktury_model_name
 		self.rodzaj_dokumentu
 	end
+	
+	def faktury_time_set
+		 update.date
+	end
+
 end

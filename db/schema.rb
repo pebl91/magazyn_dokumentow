@@ -23,11 +23,10 @@ ActiveRecord::Schema.define(version: 2021_05_25_112838) do
 
   create_table "fakturies", force: :cascade do |t|
     t.string "rodzaj_dokumentu"
-    t.text "opis"
     t.string "numer_dokumentu"
-    t.string "data_wystawienia"
-    t.string "okres_od"
-    t.string "okres_do"
+    t.date "data_wystawienia"
+    t.date "okres_od"
+    t.date "okres_do"
     t.integer "kontrahenci_id"
     t.integer "cafemenu_id"
     t.datetime "created_at", precision: 6, null: false

@@ -1,5 +1,6 @@
 pl:
   admin:
+  
     home:
       name: Strona główna
     pagination:
