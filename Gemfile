@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+gem 'figaro'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -47,6 +48,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
 
 group :test do
