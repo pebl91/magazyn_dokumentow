@@ -1,7 +1,7 @@
 class Cafemenu < ApplicationRecord
 mount_uploader :file, CafemenuUploader
 
-  validates :file, :presense => true
+  validates :file, :presence => true
   has_one :faktury
   has_one :kontrahenci
   
