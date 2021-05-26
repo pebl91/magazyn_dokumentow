@@ -64,9 +64,6 @@ RailsAdmin.config do |config|
         field :nazwa do 
         searchable true
       end
-      field :NIP do 
-        searchable true
-      end
     end
   end
   

@@ -5,8 +5,6 @@ class CreateKontrahencis < ActiveRecord::Migration[6.0]
       t.string :ulica
       t.string :kod_pocztowy
       t.string :miasto
-      t.integer :NIP
-      t.boolean :aktywna
       t.integer :faktury_id
 
       t.timestamps
