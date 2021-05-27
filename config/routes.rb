@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  devise_scope :user do
+    
+  authenticated :user do
+    root to: "rails_admin/main#dashboard", as: :admin_root
+  end
+  
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end 
+
 end
