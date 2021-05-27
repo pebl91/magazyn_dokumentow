@@ -126,3 +126,4 @@ pl:
         default_col_sep: ","
         col_sep: "Separator kolumny"
         col_sep_help: "Zostw puste dla domyślnej wartości ('%{value}')" # value is default_col_sep
+  
