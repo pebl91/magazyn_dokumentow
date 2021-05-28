@@ -51,10 +51,10 @@ group :development do
   gem 'spring',                '2.1.1'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
 end
