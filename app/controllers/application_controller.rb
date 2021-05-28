@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
+    
+    protect_from_forgery with: :exception
 
-before_action :set_current_user
+    before_action :authenticate_user!
 
-def set_current_user
-  Faktury.current_user = current_user
-end
+    #before_action :set_current_user
+
+    def set_current_user
+        Kontrahenci.current_user = current_user
+    end
 end

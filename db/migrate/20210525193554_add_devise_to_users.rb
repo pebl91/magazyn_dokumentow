@@ -13,6 +13,12 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
 
       ## Rememberable
       t.datetime :remember_created_at
+      
+      # Initialize first account:
+       User.create! do |u|
+          u.email     = 'test@test.com'
+          u.password    = 'password'
+        end
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false

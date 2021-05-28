@@ -1,8 +1,6 @@
 class Faktury < ApplicationRecord
 	
-	cattr_accessor :current_user
-
-	validates :user_id, :presence => true
+	has_one	:user
 
 	belongs_to :user
 

@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_193554) do
+ActiveRecord::Schema.define(version: 2021_05_28_085042) do
 
   create_table "cafemenus", force: :cascade do |t|
     t.string "name"
     t.string "file"
     t.integer "faktury_id"
     t.integer "kontrahenci_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,16 +41,19 @@ ActiveRecord::Schema.define(version: 2021_05_25_193554) do
     t.string "kod_pocztowy"
     t.string "miasto"
     t.integer "faktury_id"
+    t.integer "user_id"
+    t.integer "cafemenu_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
     t.string "stanowisko"
     t.integer "faktury_id"
-    t.integer "user_faktury_id"
+    t.integer "cafemenu_id"
+    t.integer "kontrahenci_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -57,6 +61,9 @@ ActiveRecord::Schema.define(version: 2021_05_25_193554) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.boolean "superadmin_role", default: false
+    t.boolean "supervisor_role", default: false
+    t.boolean "user_role", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

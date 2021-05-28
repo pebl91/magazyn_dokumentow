@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
 config.parent_controller = "::ApplicationController"
-
+config.authorize_with :cancancan
   
   
   ### Popular gems integration
@@ -58,6 +58,21 @@ config.parent_controller = "::ApplicationController"
         label 'Nowe hasło'
         searchable false
       end
+      configure :superadmin_role do
+        hide
+        label 'Administrator'
+        searchable false
+      end
+       configure :supervisor_role do
+        hide
+        label 'Moderator'
+        searchable false
+      end
+      configure :user_role do
+        hide
+        label 'Użytkownik'
+        searchable false
+      end
     end
     field :name do
         label 'Imię i Nazwisko'
@@ -69,6 +84,18 @@ config.parent_controller = "::ApplicationController"
       end
       field  :password do
         label 'Nowe hasło'
+        searchable false
+      end
+       field  :superadmin_role do
+        label 'Administrator'
+        searchable false
+      end
+      field  :supervisor_role do
+        label 'Moderator'
+        searchable false
+      end
+      field  :user_role do
+        label 'Użytkownik'
         searchable false
       end
    end
@@ -85,15 +112,60 @@ config.parent_controller = "::ApplicationController"
       field :name, :string
       field :file, :carrierwave
     end
+    field :user do
+      label 'Użytkownik'
+    end
+    edit do 
+    field :user do
+      label 'Użytkownik'
+      inline_add false
+      inline_edit false
+    end
+    end 
   end
   
     config.model 'Kontrahenci' do
       object_label_method :kontrahenci_model_name
+      field :nazwa do 
+        searchable true
+      end
+      field :ulica do 
+        searchable true
+      end
+      field :kod_pocztowy do 
+        searchable true
+      end
+      field :miasto do 
+        searchable true
+      end
+      field :user do 
+        label 'Użytkownik'
+        searchable true
+        inline_add false
+        inline_edit false
+      end
       list do
         field :nazwa do 
         searchable true
       end
     end
+    edit do 
+      field :nazwa do 
+        searchable true
+      end
+      field :ulica do 
+        searchable true
+      end
+      field :kod_pocztowy do 
+        searchable true
+      end
+      field :miasto do 
+        searchable true
+      end
+      field :user do 
+      end 
+    end
+    
   end
   
     config.model 'Faktury' do
@@ -117,9 +189,7 @@ config.parent_controller = "::ApplicationController"
         label 'Użytkownik'
         inline_add false
         inline_edit false
-        default_value do
-          bindings[:controller].current_user.id 
-      end
+
     end 
       
            field :data_wystawienia do
