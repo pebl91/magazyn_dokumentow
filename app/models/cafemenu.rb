@@ -4,6 +4,6 @@ mount_uploader :file, CafemenuUploader
   validates :file, :presence => true
   
   def custom_label_method
-  "Cefemenu #{Załącznik}"
+  "Cefemenu #{Załączniki}"
   end
 end

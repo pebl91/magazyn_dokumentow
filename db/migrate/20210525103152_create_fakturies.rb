@@ -8,6 +8,7 @@ class CreateFakturies < ActiveRecord::Migration[6.0]
       t.date :okres_do
       t.integer :kontrahenci_id
       t.integer :cafemenu_id
+      t.integer :user_id
 
       t.timestamps
     end

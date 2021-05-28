@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
+config.parent_controller = "::ApplicationController"
 
+  
   
   ### Popular gems integration
 
@@ -9,6 +11,7 @@ RailsAdmin.config do |config|
    end
    config.current_user_method(&:current_user)
 
+  
   ## == CancanCan ==
   # config.authorize_with :cancancan
 
@@ -31,7 +34,7 @@ RailsAdmin.config do |config|
     export
     bulk_delete
     show
-    edit
+    edit 
     delete
     show_in_app
 
@@ -41,11 +44,37 @@ RailsAdmin.config do |config|
   end
   
    config.model 'User' do
-     label 'Użytkownicy'
+     list do
+       field :name do
+        label 'Imię i Nazwisko'
+      end 
+      field :stanowisko do
+        label 'Stanowisko'
+      end 
+      field :email do
+      end
+      configure :password do
+        hide
+        label 'Nowe hasło'
+        searchable false
+      end
+    end
+    field :name do
+        label 'Imię i Nazwisko'
+      end 
+       field :stanowisko do
+        label 'Stanowisko'
+      end 
+      field :email do
+      end
+      field  :password do
+        label 'Nowe hasło'
+        searchable false
+      end
    end
    
    config.model 'Cafemenu' do
-    label 'Załącznik'
+    label 'Załączniki'
     field :name do
     label 'Nazwa'
   end
@@ -75,11 +104,23 @@ RailsAdmin.config do |config|
       end
       
       field :kontrahenci do
+        inline_add false
+        inline_edit false
       end
       
       field :cafemenu do
         label 'Plik'
+        inline_edit false
       end
+      
+      field :user do
+        label 'Użytkownik'
+        inline_add false
+        inline_edit false
+        default_value do
+          bindings[:controller].current_user.id 
+      end
+    end 
       
            field :data_wystawienia do
         strftime_format do

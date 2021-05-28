@@ -1,5 +1,18 @@
 pl:
   admin:
+    js:
+      is_present: Obecny
+      is_blank: Brak
+      contains: Zawiera
+      is_exactly: Jest dokładnie
+      starts_with: Zaczyna się od
+      ends_with: Kończy się na
+      date: Data ...
+      between_and_: Pomiędzy ... i ...
+      today: Dzisiaj
+      yesterday: Wczoraj
+      this_week: Ten tydzień
+      last_week: Poprzedni tydzień
   
     home:
       name: Strona główna
@@ -45,8 +58,8 @@ pl:
         menu: "Kokpit"
         breadcrumb: "Kokpit"
       index:
-        title: "Wyświetl %{model_label_plural}"
-        menu: "Wyświetl"
+        title: "Wyświetl:  %{model_label_plural}"
+        menu: "Wyświetl:"
         breadcrumb: "%{model_label_plural}"
       show:
         title: "Szczegóły dla %{model_label} '%{object_label}'"
@@ -113,7 +126,7 @@ pl:
       select: "Zaznacz pola do eksportu"
       fields_from: "Pola z %{name}"
       fields_from_associated: "Pola z asocjacji %{name}"
-      display: "Wyświetl %{name}: %{type}"
+      display: "Wyświetl: %{name}: %{type}"
       options_for: "Opcje dla %{name}"
       empty_value_for_associated_objects: "<puste>"
       click_to_reverse_selection: 'Kliknij by odwrócić zaznaczenie'

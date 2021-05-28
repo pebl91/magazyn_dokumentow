@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_193554) do
     t.date "okres_do"
     t.integer "kontrahenci_id"
     t.integer "cafemenu_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,14 +39,17 @@ ActiveRecord::Schema.define(version: 2021_05_25_193554) do
     t.string "ulica"
     t.string "kod_pocztowy"
     t.string "miasto"
-    t.integer "NIP"
-    t.boolean "aktywna"
     t.integer "faktury_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "stanowisko"
+    t.integer "faktury_id"
+    t.integer "user_faktury_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
