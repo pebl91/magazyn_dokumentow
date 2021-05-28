@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    flash[:info] = 'Registrations are not open.'
+    flash[:info] = 'Rejestracja jest zamknięta.'
     redirect_to request.referrer
   end
 end

@@ -1,0 +1,64 @@
+@import "bootstrap";
+
+h1 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  margin-top: 2px;
+  text-align: center;
+  font-weight: bold;
+  color: #gray;
+}
+
+h2 {
+  margin-bottom: 8px;
+  margin-top: 2px;
+  text-align: center;
+  font-weight: bold;
+  color: #blue;
+}
+
+h4 {
+    font-size: 0.9em;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #blue;
+}
+
+p {
+    border: 1.3px solid gray;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px; 
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 45%;
+}
+
+.container-fluid {
+    background-color: white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 40%;
+    height: 400px;
+    
+}
+
+.form-group{
+   padding: 15px; 
+}
+body {
+    background-color: #33ffec;
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}

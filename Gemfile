@@ -30,6 +30,8 @@ gem 'devise-i18n'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cancancan'
+gem 'bootstrap', '~> 5.0.1'
+gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

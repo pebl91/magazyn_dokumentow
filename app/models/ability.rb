@@ -9,6 +9,7 @@ class Ability
       can :manage, :all
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :manage, :dashboard         # allow access to dashboard
+      cannot [:destroy], User, user_id: user.id 
     end
     if user.supervisor_role?
       can :access, :rails_admin
@@ -21,6 +22,7 @@ class Ability
       can :manage, :dashboard
       can :read,    User
       can :manage,  User, user_id: user.id  
+      cannot [:destroy], User
       can :read,    Kontrahenci
       can :manage,  Kontrahenci, user_id: user.id 
       can :create,  Kontrahenci, user_id: user.id 
@@ -30,6 +32,8 @@ class Ability
       can :manage,  Cafemenu, user_id: user.id 
       can :read,    Cafemenu
       can :create,    Cafemenu, user_id: user.id 
+      cannot [:create], User
+      
     end
 
   end
