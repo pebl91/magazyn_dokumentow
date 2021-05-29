@@ -6,8 +6,8 @@
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to t(".sign_up"), new_registration_path(resource_name) %><br />
   <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
+  <div class="alert alert-primary" role="alert">
+    <h5><%= msg %></h5>
   </div>
 <% end %>
 <% end %>
