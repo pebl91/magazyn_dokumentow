@@ -1,24 +1,19 @@
 # README
+It is a simple application for storing documents. 
+You can add some contractors and then you can add documents for each one such as invoices, bills, decisions, etc ...
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+Next, migrate the database (change migrations of users and admin on your own):
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
